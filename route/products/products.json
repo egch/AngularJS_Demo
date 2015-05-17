@@ -1,0 +1,23 @@
+[
+  {
+    "name": "orange",
+    "image": "../../images/orange.jpg",
+    "canPurchase": true
+  },
+  {
+    "name": "black",
+    "image": "../../images/black.jpg",
+    "canPurchase": true
+  },
+  {
+    "name": "cuba",
+    "image": "../../images/cuba.jpg",
+    "canPurchase": true
+
+  },
+  {
+    "name": "city",
+    "image": "../../images/city.jpg",
+    "canPurchase": true
+  }
+]
