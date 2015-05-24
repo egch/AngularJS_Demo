@@ -1,0 +1,9 @@
+{
+  "name": "angularjs-demo",
+  "version": "1.0.0",
+  "description": "An example of how to use AngularJS",
+  "author": "Enrico Giurin",
+  "devDependencies": {
+    "local-web-server": "^0.5.19"
+  }
+}
