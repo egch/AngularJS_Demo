@@ -1,14 +1,22 @@
-<div class="container" >
-    <h1>Havaianas Store</h1>
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="product in products | orderBy:'-price'">
-            <h4>{{product.name}}</h4>
-            <img ng-src="{{product.image}}" class="img-responsive center-block"/>
-            <a ng-href='#/list/{{product.name}}'>Details</a>
-            <button ng-show="product.canPurchase">Add to cart</button>
-        </li>
-    </ul>
-
-
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="product in products | orderBy:orderProp">
+                    <h4>{{product.name}}</h4>
+                    <img ng-src="{{product.image}}" class="img-responsive"/>
+                    <h4>{{product.price}} eur</h4>
+                    <a ng-href='#/list/{{product.name}}'>Details</a>
+                   <!-- <button ng-show="product.canPurchase">Add to cart</button>-->
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

@@ -2,22 +2,26 @@
   {
     "name": "orange",
     "image": "images/orange.jpg",
+    "price": 25,
     "canPurchase": true
   },
   {
     "name": "black",
     "image": "images/black.jpg",
+    "price": 40,
     "canPurchase": true
   },
   {
     "name": "cuba",
     "image": "images/cuba.jpg",
+    "price": 15,
     "canPurchase": true
 
   },
   {
     "name": "city",
     "image": "images/city.jpg",
+    "price": 10,
     "canPurchase": true
   }
 ]
