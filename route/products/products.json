@@ -8,13 +8,13 @@
   {
     "name": "black",
     "image": "images/black.jpg",
-    "price": 40,
+    "price": 20,
     "canPurchase": true
   },
   {
     "name": "cuba",
     "image": "images/cuba.jpg",
-    "price": 15,
+    "price": 30,
     "canPurchase": true
 
   },

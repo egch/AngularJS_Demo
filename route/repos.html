@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="repo in repos">
+                    <h4>Full Name: {{repo.full_name}}</h4>
+                    <h4>URL: {{repo.html_url}}</h4>
+                    <h4>Description: {{repo.description}}</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,13 @@
          });
      }]);
 
+ routeApp.controller('GithubController', ['$scope', '$routeParams', '$http',
+     function($scope, $routeParams, $http) {
+         $http.get("https://api.github.com/users/egch/repos").success(function(data) {
+             $scope.repos = data;
+         });
+     }]);
+
  routeApp.config(['$routeProvider',
 	 function($routeProvider) {
 		 $routeProvider.
@@ -27,8 +34,13 @@
                  templateUrl: 'details.html',
                  controller: 'DetailsController'
              }).
+             when('/github', {
+                 templateUrl: 'repos.html',
+                 controller: 'GithubController'
+             }).
 
-			 otherwise({
+
+             otherwise({
 				 redirectTo: '/list'
 			 });
 	 }]);

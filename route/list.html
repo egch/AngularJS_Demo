@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
+            Search: <input ng-model="query"><br/>
             Sort by:
             <select ng-model="orderProp">
                 <option value="name">Alphabetical</option>
@@ -9,7 +10,7 @@
         </div>
         <div class="col-md-6">
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="product in products | orderBy:orderProp">
+                <li class="list-group-item" ng-repeat="product in products | filter:query | orderBy:orderProp">
                     <h4>{{product.name}}</h4>
                     <img ng-src="{{product.image}}" class="img-responsive"/>
                     <h4>{{product.price}} eur</h4>
