@@ -18,7 +18,7 @@
 
  routeApp.controller('GithubController', ['$scope', '$routeParams', '$http',
      function($scope, $routeParams, $http) {
-         $http.get("https://api.github.com/users/egch/repos").success(function(data) {
+         $http.get("https://api.github.com/users/"+ $routeParams.user+ "/repos").success(function(data) {
              $scope.repos = data;
          });
      }]);
@@ -26,22 +26,23 @@
  routeApp.config(['$routeProvider',
 	 function($routeProvider) {
 		 $routeProvider.
+             when('/', {
+                 templateUrl: 'templates/menu.html'
+             }).
 			 when('/list', {
-				 templateUrl: 'list.html',
+				 templateUrl: 'templates/havaianas/list.html',
                  controller: 'ListController'
 			 }).
              when('/list/:name', {
-                 templateUrl: 'details.html',
+                 templateUrl: 'templates/havaianas/details.html',
                  controller: 'DetailsController'
              }).
-             when('/github', {
-                 templateUrl: 'repos.html',
+             when('/github/:user', {
+                 templateUrl: 'templates/github/repos.html',
                  controller: 'GithubController'
              }).
-
-
              otherwise({
-				 redirectTo: '/list'
+				 redirectTo: '/'
 			 });
 	 }]);
 

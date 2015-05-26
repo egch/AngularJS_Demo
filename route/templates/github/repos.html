@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <h1 class="text-center">github browser</h1>
+    <div class="row">
+        <div class="col-md-3">
+            github user and click Search<br/>
+            <input type="text" ng-model="usergithub" name="user"/>
+            <a ng-href='#/github/{{usergithub}}'>Search</a>
+        </div>
+
+        <div class="col-md-6">
+           <ul class="list-group">
+               <li class="list-group-item">
+               <img ng-src="{{repos[0].owner.avatar_url}}" class="img-responsive"/>
+               </li>
+
+               <li class="list-group-item" ng-repeat="repo in repos">
+                   <h4>{{repo.full_name}}</h4>
+                   <h4> <a ng-href="{{repo.html_url}}">{{repo.html_url}}</a></h4>
+                   <h4>{{repo.description}}</h4>
+               </li>
+           </ul>
+        </div>
+    </div>
+</div>
