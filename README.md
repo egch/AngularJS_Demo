@@ -8,7 +8,9 @@ Simple demo of AngularJS.
 https://www.npmjs.com/package/local-web-server
 1. Start up the web server:
 *ws*
-1. Browse to http://localhost:8000/
+1. Browse to:
+    * http://localhost:8000/demo to see the demo
+    * http://localhost:8000/slides to go through the presentation
 
 # Where the slides are
 
