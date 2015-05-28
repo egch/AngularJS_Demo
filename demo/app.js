@@ -21,6 +21,8 @@
      function($scope, $routeParams, $http) {
          $http.get("https://api.github.com/users/"+ $routeParams.user+ "/repos").success(function(data) {
              $scope.repos = data;
+             $scope.usergithub = 'egch';
+
          });
      }]);
 
