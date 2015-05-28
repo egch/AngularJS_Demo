@@ -17,14 +17,6 @@
          });
      }]);
 
- routeApp.controller('GithubController', ['$scope', '$routeParams', '$http',
-     function($scope, $routeParams, $http) {
-         $http.get("https://api.github.com/users/"+ $routeParams.user+ "/repos").success(function(data) {
-             $scope.repos = data;
-             $scope.usergithub = 'egch';
-
-         });
-     }]);
 
  routeApp.config(['$routeProvider',
 	 function($routeProvider) {
@@ -40,14 +32,57 @@
                  templateUrl: 'templates/havaianas/details.html',
                  controller: 'DetailsController'
              }).
-             when('/github/:user', {
-                 templateUrl: 'templates/github/repos.html',
-                 controller: 'GithubController'
+             when('/github', {
+                 templateUrl: 'templates/github/repos.html'
              }).
              otherwise({
 				 redirectTo: '/'
 			 });
 	 }]);
+
+
+ /* ************************************************ */
+
+
+ routeApp.controller('reposInfoCntrl', function ($scope, GithubInfoService) {
+     $scope.devs = [{
+         name: 'enrico giurin',
+         githubLogin: 'egch'
+     }, {
+         name: 'enrico mezzato',
+         githubLogin: 'mezzato'
+     }, {
+         name: 'lucio benfante',
+         githubLogin: 'benfante'
+     }, {
+         name: 'michele franzin',
+         githubLogin: 'fuzziness'
+     }];
+
+     $scope.getUserRepos = function (username) {
+         GithubInfoService.getUserRepos(username).then(function (result) {
+             $scope.ReposData = result.data;
+             console.log(result);
+         }, function (result) {
+             alert("Error: No data returned");
+         });
+     };
+ });
+
+ routeApp.$inject = ['$scope', 'GithubInfoService'];
+
+ routeApp.factory('GithubInfoService', ['$http', function ($http) {
+     var factory = {
+         getUserRepos: function (username) {
+             var data = $http({
+                 method: 'GET',
+                 url: "https://api.github.com/users/" + username + "/repos"
+             });
+             return data;
+         }
+     }
+     return factory;
+ }]);
 
 
 
