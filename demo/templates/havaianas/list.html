@@ -11,11 +11,9 @@
         <div class="col-md-6">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="product in products | filter:query | orderBy:orderProp">
-                    <h4>{{product.name}}</h4>
-                    <img ng-src="{{product.image}}" class="img-responsive"/>
-                    <h4>{{product.price}} eur</h4>
-                    <a ng-href='#/list/{{product.name}}'>Details</a>
-                   <!-- <button ng-show="product.canPurchase">Add to cart</button>-->
+                    <a href="#/list/{{product.name}}" class="thumb"><img ng-src="{{product.image}}"></a>
+                    <h4><a href="#/list/{{product.name}}">{{product.name}}</a> - {{product.price}} eur</h4>
+                    <!-- <button ng-show="product.canPurchase">Add to cart</button>-->
                 </li>
             </ul>
         </div>
