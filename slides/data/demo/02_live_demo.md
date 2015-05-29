@@ -6,29 +6,40 @@
 
 !SLIDE left ======================
 
-## The logical workflow
+## The basic AngularJS harness
 
 ---
-Define a module:
-
+JS: Define a module:
     var routeApp = angular.module('routeApp',['ngRoute']);
-
 ---
-Define a controller:
+HTML: Bind the module to the HTML:
+    <html ng-app="routeApp">
+---
+JS: Define a controller:
 
      routeApp.controller('ListController', ['$scope', '$http',
          function($scope, $http) {...
      }]);
 
+---
+HTML: Bind the controller to the HTML (or use routing):
+
+    <div ng-controller="ListController">
+      ...
+    </div>
+
+
 !SLIDE left ===================
 
 ## Note
 
-1. The module variable definition:
+1. The **module definition**:
     https://docs.angularjs.org/api/ng/function/angular.module
 
-1. The controller defined with a module method
-1. The dependency injection:
+    **a module is defined only once with its dependencies**
+
+1. The **controller** defined with a **module method**
+1. The **dependency injection**:
 
         myModule.myMethod('myObjName',['firstDependency','firstDependency',
             function(firstDependencyVar,secondDependencyVar){ // code
@@ -38,7 +49,7 @@ Define a controller:
 
 !SLIDE left ===================
 
-## Module loading
+## Module loading (~advanced)
 
 https://docs.angularjs.org/guide/module#module-loading-dependencies
 
@@ -62,7 +73,7 @@ There are two phases:
 
 They define:
 
-- providers: which will create instances of services
+- **providers**: which will create instances of services
 
 - constants
 
@@ -96,13 +107,28 @@ They define:
 
 ## Configuration Blocks
 
-The $provide service is responsible for telling Angular how to create new injectable things; these things are called services.
+The **$provide service** is responsible for telling Angular **how to create new injectable things; these things are called services**.
+The object that creates the service (factory pattern) is called provier.
 
-Services are defined by things called providers, which is what you're creating when you use $provide.
+so:
+
+1. $provide service -> defines a provider
+
+1. provider -> creates a service at injection time
+
+!SLIDE left ======================
+
+## Configuration Details (~advanced)
 
 Defining a provider is done via the provider method on the $provide service, and you can get hold of the $provide service by asking for it to be injected into an application's config function
 
-Bootstrapping AngularJS apps automatically using the ngApp directive is very easy and suitable for most cases. In advanced cases, such as when using script loaders, you can use the imperative / manual way to bootstrap the app.
+!SLIDE left ======================
+
+## Bootstrapping
+
+Bootstrapping AngularJS apps automatically using the **ngApp directive** is very easy and suitable for most cases.
+
+In advanced cases, such as when using script loaders, you can use the imperative / manual way to bootstrap the app.
 
 !SLIDE left ======================
 
@@ -112,16 +138,16 @@ https://docs.angularjs.org/tutorial/step_00
 
 There are 3 important things that happen during the app bootstrap:
 
-* The injector that will be used for dependency injection is created.
+* The **injector** that will be used for dependency injection is **created**.
 
-* The injector will then create the root scope that will become the context for the model of our application.
+* The **injector** will then **create** the **root scope** that will become the context for the model of our application.
 
-* Angular will then "compile" the DOM starting at the ngApp root element, processing any directives and bindings found along the way.
+* **Angular will then "compile" the DOM starting at the ngApp root element**, processing any directives and bindings found along the way.
 
 
 !SLIDE left ======================
 
-## A live controller
+## The controller
 
 ---
 JS
@@ -137,8 +163,8 @@ JS
 ---
 HTML
 
-    <div ng-controller="MyController">
-      <button ng-click="sayHello()">Hello</button>
+    <div ng-controller="ListController">
+      ....
     </div>
 
 ---
@@ -173,7 +199,7 @@ HTML
 
 - Defines a **route**: Default hashbang URLs: see https://docs.angularjs.org/guide/$location
 
-- Defines a **template**
+- Defines a **template**: it is _downloaded once and cached_ if not already
 
 - Defines a **controller**
 
@@ -189,6 +215,9 @@ Scope is the glue between application controller and the view (HTML)
 - **hierarchical**: if a property is not found, look up the parent scope
 
 - **unique source of truth**: use it for backend updates (REST) etc.
+
+---
+You may find _Batarang_ Chrome plug-in useful.
 
 !SLIDE left ======================
 ## $scope

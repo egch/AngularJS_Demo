@@ -16,16 +16,21 @@
     - **Karma**: unit test runner
     - **Protractor**: end to end (E2E) test runner
     - Grunt or even better **Gulp**: building systems (watch files while developing, minify etc.)
-    - **a web server** (for testing Http-Server, local-web-server etc.)
+
+* **a web server** (for testing Http-Server, local-web-server etc.)
 
 !SLIDE left ===================
 
 # Why AngularJS
 
-* by Google, well developed and maintained
+* by Google, well developed and maintained, wide adoption
+
 * Angular helps you organize your JavaScript
+
 * Angular helps create responsive (as in fast) websites.
+
 * Angular is flexible and extensible: plays well with jQuery, Bootstrap, lots of extensions
+
 * Angular is easy to test (unit and E2E)
 
 !SLIDE left ======================
