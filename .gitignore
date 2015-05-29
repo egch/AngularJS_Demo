@@ -1,5 +1,7 @@
 .idea
 *.iml
 http.sh
+route/components
+route/node_modules
 demo/bower_components
 *.log
