@@ -140,9 +140,17 @@ There are 3 important things that happen during the app bootstrap:
 
 * The **injector** that will be used for dependency injection is **created**.
 
+    _manually_ you could create one:
+
+        var injector = angular.injector(['myModule', 'ng']);
+
 * The **injector** will then **create** the **root scope** that will become the context for the model of our application.
 
 * **Angular will then "compile" the DOM starting at the ngApp root element**, processing any directives and bindings found along the way.
+
+* The injector provides the services, e.g.
+
+        var greeter = injector.get('githubInfoService');
 
 
 !SLIDE left ======================

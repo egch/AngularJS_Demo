@@ -87,6 +87,18 @@ routeApp.controller('reposInfoCntrl', function ($scope, githubInfoService) {
     };
 });
 
+// injector creation
+
+var injector = angular.injector(['routeApp', 'ng']);
+
+var githubInfoService = injector.get('githubInfoService');
+var userName = 'egch';
+githubInfoService.getUserRepos(userName).then(function (result) {
+    console.log(userName + ' has ' + (angular.isArray(result.data) ? result.data.length : 0) + ' active project(s)');
+}, function (result) {
+    alert("Error: No data returned");
+});
+
 
 
 
