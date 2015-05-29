@@ -29,7 +29,6 @@ model as services.
 1. model 2-way binding with the HTML
 1. AngularJS services: $http for example (and JavaScript promises)
 1. how to write your own service
-1. how to write directives
-1. AngularJS scope.$watch
+1. directives, filters, scope.$watch
 1. What's coming in Angular 2.0
 1. A glimpse of Angular Material, based on Google material design principles

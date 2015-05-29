@@ -1,7 +1,8 @@
 {
     "title": "angular-showoff demo",
     "sections": [
-        {"file": "data/begin/begin.md"},
-        {"file": "data/end/end.md"}
+        {"file": "data/demo/01_intro.md"},
+        {"file": "data/demo/02_live_demo.md"},
+        {"file": "data/demo/03_extras.md"}
     ]
 }
