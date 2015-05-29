@@ -6,6 +6,7 @@ Simple demo of AngularJS.
 1. Install nodejs: https://nodejs.org/
 1. Type *npm install* to install local-web-server, just to run a local web server. But any other web server would do.
 https://www.npmjs.com/package/local-web-server
+1. Install the local dependencies with bower. Type *bower install* from the demo folder (containing the bower.json file).
 1. Start up the web server:
 *ws*
 1. Browse to:
