@@ -2,7 +2,17 @@
   "name": "city",
   "image": "images/city.jpg",
   "price": 10,
-  "description": "Perfect for the Brazilian beaches",
-  "specifications": "In plastic, all the sizes available",
-  "reviews": "to be done"
+  "description": "Perfect for the city",
+  "specifications": "In plastic, all the sizes available from 38 to 40",
+  "reviews": [
+    {
+      "body": "I love this product!",
+      "author": "joe@thomas.com"
+    },
+    {
+      "body": "This product sucks",
+      "author": "tim@hater.com"
+    }
+  ]
 }
+

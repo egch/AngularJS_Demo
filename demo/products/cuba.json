@@ -4,5 +4,15 @@
   "price": 30,
   "description": "Perfect for the Brazilian beaches",
   "specifications": "In plastic, all the sizes available",
-  "reviews": "to be done"
+  "reviews": [
+    {
+      "body": "I love this product!",
+      "author": "joe@thomas.com"
+    },
+    {
+      "body": "This product sucks",
+      "author": "tim@hater.com"
+    }
+  ]
 }
+

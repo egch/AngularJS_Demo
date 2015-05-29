@@ -1,13 +1,38 @@
 <div class="container">
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h4>{{product.name}}</h4>
-        <img ng-src="{{product.image}}" class="img-responsive"/>
-        <h4>{{product.price}} euro</h4>
-        <h4>{{product.description}}</h4>
-        <h4>
-            <a ng-href='#/list'>Home</a>
-        </h4>
-    </div>
+        <div class="col-md-4">
+            <h2>{{product.name}}</h2>
+            <img ng-src="{{product.image}}" class="img-responsive"/>
+            <h3>{{product.price}} euro</h3>
+            <h3>{{product.description}}</h3>
+            <h6>{{product.specifications}}</h6>
+            <h4>
+                <a ng-href='#/list'>Home</a>
+            </h4>
+        </div>
+
+        <div class="col-md-6 well well-lg">
+            <h4> Reviews </h4>
+            <blockquote ng-repeat="review in product.reviews">
+                {{review.body}}<br/>
+                <cite>by: {{review.author}}</cite>
+            </blockquote>
+
+
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+                  ng-submit="reviewCtrl.addReview(product)">
+                <blockquote>
+                    {{reviewCtrl.review.body}}
+                </blockquote>
+
+                <textarea ng-model="reviewCtrl.review.body" required></textarea> <br/>
+                <label>by:</label>
+                <input name="author" ng-model="reviewCtrl.review.author" type="email" required/>
+                <input type="submit" value="Submit" class="btn"/>
+
+            </form>
+
+        </div>
     </div>
 </div>
+

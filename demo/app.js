@@ -20,6 +20,17 @@ routeApp.controller('DetailsController', ['$scope', '$routeParams', '$http',
         console.log('DetailsController function is done');
     }]);
 
+routeApp.controller("ReviewController", function(){
+    this.review = {};
+
+    this.addReview = function(product) {
+        product.reviews.push(this.review);
+        this.review = {};
+    };
+
+});
+
+
 
 routeApp.config(['$routeProvider',
     function ($routeProvider) {
@@ -42,6 +53,7 @@ routeApp.config(['$routeProvider',
                 redirectTo: '/'
             });
     }]);
+
 
 
 /* ************************************************ */

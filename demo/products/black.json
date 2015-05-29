@@ -2,7 +2,18 @@
   "name": "black",
   "image": "images/black.jpg",
   "price": 20,
-  "description": "Perfect for the Brazilian beaches",
-  "specifications": "In plastic, all the sizes available",
-  "reviews": "to be done"
+  "description": "Perfect for the dark room",
+  "specifications": "In plastic, just 37 and 38",
+  "reviews": [
+    {
+      "body": "I love this product!",
+      "author": "joe@thomas.com"
+    },
+    {
+      "body": "This product sucks",
+      "author": "tim@hater.com"
+    }
+  ]
 }
+
+

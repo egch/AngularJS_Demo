@@ -4,5 +4,14 @@
   "price": 25,
   "description": "Suitable for swimming pool",
   "specifications": "In precious plastic, all the sizes from 37 to 42",
-  "reviews": "to be done"
+  "reviews": [
+    {
+      "body": "I love this product!",
+      "author": "joe@thomas.com"
+    },
+    {
+      "body": "This product sucks",
+      "author": "tim@hater.com"
+    }
+  ]
 }
